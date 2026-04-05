@@ -605,7 +605,7 @@ Write-OK "Wrapper created (cli.js)"
 # ─── Write universal patcher ──────────────────────────
 # (Same Node.js patcher as bash version — extract from install.sh or inline)
 
-$patcherUrl = "https://raw.githubusercontent.com/0Chencc/clawgod/main/patcher.mjs"
+$patcherUrl = "https://raw.githubusercontent.com/b1ank1108/clawgod/main/patcher.mjs"
 
 # Inline the patcher to avoid extra download
 $patcherCode = @'

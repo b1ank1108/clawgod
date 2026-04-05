@@ -7,7 +7,7 @@ set -e
 #  Downloads Claude Code from npm, applies patches, replaces claude command
 #
 #  用法:
-#    curl -fsSL https://raw.githubusercontent.com/0Chencc/clawgod/main/install.sh | bash
+#    curl -fsSL https://raw.githubusercontent.com/b1ank1108/clawgod/main/install.sh | bash
 #    # 或
 #    bash install.sh [--version 2.1.89]
 # ─────────────────────────────────────────────────────────
@@ -681,42 +681,42 @@ const patches = [
     pattern: /let (\w+)=\w+\(\);if\(\1!=="firstParty"&&\1!=="anthropicAws"\)return!1;return\/\^claude-\(opus\|sonnet\)-4-6\/\.test\((\w+)\)/g,
     replacer: (m, v, modelVar) => `return/^claude-(opus|sonnet)-4-/.test(${modelVar})`,
   },
-  // ── 绿色主题 (patch 标识) ──
+  // ── 淡青主题 (patch 标识) ──
 
   {
-    name: 'Logo + brand color → green (RGB dark)',
+    name: 'Logo + brand color → teal (RGB dark)',
     pattern: /clawd_body:"rgb\(215,119,87\)"/g,
-    replacer: () => 'clawd_body:"rgb(34,197,94)"',
+    replacer: () => 'clawd_body:"rgb(94,206,194)"',
   },
   {
-    name: 'Logo + brand color → green (ANSI)',
+    name: 'Logo + brand color → teal (ANSI)',
     pattern: /clawd_body:"ansi:redBright"/g,
-    replacer: () => 'clawd_body:"ansi:greenBright"',
+    replacer: () => 'clawd_body:"ansi:cyanBright"',
   },
   {
-    name: 'Theme claude color → green (dark)',
+    name: 'Theme claude color → teal (dark)',
     pattern: /claude:"rgb\(215,119,87\)"/g,
-    replacer: () => 'claude:"rgb(34,197,94)"',
+    replacer: () => 'claude:"rgb(94,206,194)"',
   },
   {
-    name: 'Theme claude color → green (light)',
+    name: 'Theme claude color → teal (light)',
     pattern: /claude:"rgb\(255,153,51\)"/g,
-    replacer: () => 'claude:"rgb(22,163,74)"',
+    replacer: () => 'claude:"rgb(45,164,153)"',
   },
   {
-    name: 'Shimmer → green',
+    name: 'Shimmer → teal',
     pattern: /claudeShimmer:"rgb\(2[34]5,1[45]9,1[12]7\)"/g,
-    replacer: () => 'claudeShimmer:"rgb(74,222,128)"',
+    replacer: () => 'claudeShimmer:"rgb(128,222,210)"',
   },
   {
-    name: 'Shimmer light → green',
+    name: 'Shimmer light → teal',
     pattern: /claudeShimmer:"rgb\(255,183,101\)"/g,
-    replacer: () => 'claudeShimmer:"rgb(34,197,94)"',
+    replacer: () => 'claudeShimmer:"rgb(94,206,194)"',
   },
   {
-    name: 'Hex brand color → green',
+    name: 'Hex brand color → teal',
     pattern: /#da7756/g,
-    replacer: () => '#22c55e',
+    replacer: () => '#5ECEA2',
   },
 
   // ── 限制移除 ──
@@ -981,7 +981,7 @@ hash -r 2>/dev/null
 echo ""
 echo -e "  ${BOLD}${GREEN}ClawGod installed!${NC}"
 echo ""
-dim "  claude            — Start patched Claude Code (green logo)"
+dim "  claude            — Start patched Claude Code (teal logo)"
 dim "  claude.orig       — Run original unpatched Claude Code"
 echo ""
 warn "  If 'claude' still runs the old version, restart your terminal or run: hash -r"
